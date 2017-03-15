@@ -1,0 +1,37 @@
+# the following can be modified to change the words that the bot responds to
+intent:
+  getStatus:
+    - status
+    - health
+    - healthcheck
+  addService:
+    - add
+    - new
+  setStatus:
+    - update
+    - set
+  list:
+    - list
+    - ls
+    - show
+  hello:
+    - hello
+    - hi
+    - howdy
+  callMe:
+    - 'call me (.*)'
+    - 'my name is (.*)'
+  whoAmI:
+    - what is my name
+    - who am i
+  help:
+    - help
+    - how do you work
+    - what can you do
+  shutdown:
+    - shutdown
+  uptime:
+    - uptime
+    - identify yourself
+    - who are you
+    - what is your name

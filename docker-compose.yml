@@ -1,0 +1,8 @@
+upbot:
+    build: ./
+    links:
+        - redis
+redis:
+    image: redis
+    ports:
+        - "6379"
