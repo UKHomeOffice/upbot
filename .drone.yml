@@ -46,6 +46,14 @@ pipeline:
   #     branch: master
   #     event: push
 
+  notify:
+    image: plugins/slack
+    webhook: https://hooks.slack.com/services/${SLACK_WEBHOOK}
+    channel: drone
+    username: drone
+    when:
+      status: [ success, failure ]
+
 services:
   dind:
     image: docker:1.11-dind

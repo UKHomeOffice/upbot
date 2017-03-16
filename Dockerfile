@@ -14,6 +14,6 @@ CMD [ "npm", "start"]
 
 
 # build with the following command:
-# docker build -t tomfitzherbert/upbot:v0.0.1 .
+# docker build -t tomfitzherbert/upbot:0.0.1 .
 # and run it with:
-# docker run -t -i tomfitzherbert/upbot:v0.0.1
+# docker run -t -i tomfitzherbert/upbot:0.0.1
