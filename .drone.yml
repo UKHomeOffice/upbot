@@ -11,17 +11,17 @@ pipeline:
       branch: master
       event: push
 
-  # image_to_quay:
-  #   image: docker:1.11
-  #   environment:
-  #     - DOCKER_HOST=tcp://127.0.0.1:2375
-  #   commands:
-  #     - docker login -u=${DOCKER_USER} -p=${DOCKER_PASSWORD} quay.io
-  #     - docker tag upbot quay.io/ukhomeofficedigital/upbot:${DRONE_COMMIT_SHA}
-  #     - docker push quay.io/ukhomeofficedigital/upbot:${DRONE_COMMIT_SHA}
-  #   when:
-  #     branch: master
-  #     event: push
+  image_to_quay:
+    image: docker:1.11
+    environment:
+      - DOCKER_HOST=tcp://127.0.0.1:2375
+    commands:
+      - docker login -u="ukhomeofficedigital+upbot" -p=${DOCKER_PASSWORD} quay.io
+      - docker tag upbot quay.io/ukhomeofficedigital/upbot:${DRONE_COMMIT_SHA}
+      - docker push quay.io/ukhomeofficedigital/upbot:${DRONE_COMMIT_SHA}
+    when:
+      branch: master
+      event: push
 
   # deploy_to_ci:
   #   image: quay.io/ukhomeofficedigital/kd:latest
