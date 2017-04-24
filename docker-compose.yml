@@ -1,8 +1,16 @@
-upbot:
-    build: ./
-    links:
-        - redis
-redis:
-    image: redis
-    ports:
-        - "6379"
+version: '3'
+
+services:
+  upbot:
+      build:
+        context: .
+      environment:
+        - UPBOT_REDIS_HOST=redis
+        - UPBOT_REDIS_PORT=6379
+        - HODQ_SLACK_API_TOKEN
+      links:
+          - redis
+  redis:
+      image: redis
+      ports:
+          - "6379"
